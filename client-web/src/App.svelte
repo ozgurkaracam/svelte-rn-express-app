@@ -10,6 +10,8 @@
     CardHeader,
     Button,
     Spinner,
+    Toast,
+    ToastBody,
   } from "sveltestrap";
   import axios from "axios";
   import baseURL from "./baseURL";

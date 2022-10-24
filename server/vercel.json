@@ -1,15 +1,16 @@
 {
   "version": 2,
   "builds": [
-      {
-          "src": "./bin/www",
-          "use": "@vercel/node"
-      }
+    {
+      "src": "./bin/www",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-      {
-          "src": "/(.*)",
-          "dest": "/"
-      }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "rewrites": [{ "source": "/routes/api/(.*)", "destination": "/api" }]
 }

@@ -1,1 +1,1 @@
-export default "http://localhost:3000/api/"
+export default "https://vercel.com/ozgurkaracam/svelte-rn-express-app/api/"

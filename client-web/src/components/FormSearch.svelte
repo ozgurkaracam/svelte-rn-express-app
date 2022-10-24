@@ -17,6 +17,6 @@
 
 <style>
   .searchContainer {
-    background-color: lightgrey;
+    background-color: lightblue;
   }
 </style>

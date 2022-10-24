@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import baseURL from "../utils/baseURL";
 import axios from "axios";
 
-export default function SearchBar({getDetails}) {
+export default function SearchBar({getDetails,setsearchtext,searchtext}) {
   const [title, settitle] = useState("");
   const [suggestions, setsuggestions] = useState([]);
   function changeText(text) {
-    settitle(text);
+    setsearchtext(text);
     axios
-      .get(`${baseURL}getSuggestions/${title}`)
+      .get(`${baseURL}getSuggestions/${searchtext}`)
       .then((data) => {
         setsuggestions(data.data);
         console.log(suggestions);
@@ -25,6 +25,7 @@ export default function SearchBar({getDetails}) {
         autoCapitalize={false}
         style={styles.searchForm}
         placeholder="Aramak İstediğiniz Şeyi Yazınız!"
+        value={searchtext}
       />
       {suggestions.length > 0 && (
             <View style={styles.suggestionsContainer}>

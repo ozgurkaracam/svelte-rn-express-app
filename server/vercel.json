@@ -7,13 +7,9 @@
       }
   ],
   "routes": [
-    {
-        "src": "/api/(.*)",
-        "dest": "./routes/api/index.js"
-    },
       {
           "src": "/(.*)",
-          "dest": "./public/index.html"
+          "dest": "main.js"
       }
   ],
   "public":true

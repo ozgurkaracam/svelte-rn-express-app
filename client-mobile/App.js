@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   StyleSheet,
   ActivityIndicator,
+  Platform,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
@@ -62,7 +63,11 @@ const Home = () => {
     );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={{
+        paddingVertical: Platform.OS == "android" ? 30 : 0,
+      }}
+    >
       <SearchBar
         getDetails={getDetails}
         setloading={setloading}

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "client-mobile",
-    "slug": "client-mobile",
+    "name": "Ucuz Bul!",
+    "slug": "fiyat-kiyaslama-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.krcmyazilim.fiyatkiyaslamaapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

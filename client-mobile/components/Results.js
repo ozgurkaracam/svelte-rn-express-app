@@ -17,7 +17,9 @@ const Results = ({ results, navigation }) => {
     <ScrollView style={styles.resultContainer}>
       <View style={styles.heading}>
         <Text style={styles.headingText}>
-          {results.title} için bulunan {results.prices.length} Arama Sonucu
+          {results.title} için bulunan{" "}
+          <Text style={{ fontWeight: "700" }}>{results.prices.length}</Text>{" "}
+          Arama Sonucu
         </Text>
       </View>
       {results.prices.map((detail) => {
@@ -46,9 +48,17 @@ const Results = ({ results, navigation }) => {
               >
                 <Text>{detail.title}</Text>
                 <View style={styles.cargoContainer}>
-                  <Text style={[styles.cargo,{
-                      color:(detail.cargo=="Ücretsiz Kargo" ? "green" : "red")
-                  }]}>{detail.cargo}</Text>
+                  <Text
+                    style={[
+                      styles.cargo,
+                      {
+                        color:
+                          detail.cargo == "Ücretsiz Kargo" ? "green" : "red",
+                      },
+                    ]}
+                  >
+                    {detail.cargo}
+                  </Text>
                   <Text style={styles.cargoTime}> {detail.cargoTime}</Text>
                 </View>
               </View>
@@ -81,10 +91,10 @@ const styles = StyleSheet.create({
   resultRow: {
     marginBottom: 10,
     flexDirection: "row",
-    borderBottomColor:"black",
-    borderBottomWidth:.5,
-    paddingBottom:10,
-    alignItems:"center"
+    borderBottomColor: "black",
+    borderBottomWidth: 0.5,
+    paddingBottom: 10,
+    alignItems: "center",
   },
   price: {
     fontWeight: "700",
@@ -93,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   cargoTime: {
-      color:"purple"
+    color: "purple",
   },
   cargo: {},
 });

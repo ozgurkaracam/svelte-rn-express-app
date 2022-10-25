@@ -1,1 +1,1 @@
-export default process.env.NODE_ENV=='production' ? "https://vercel.com/ozgurkaracam/svelte-rn-express-app/api/" : "http://localhost:3000/api/"
+export default process.env.NODE_ENV=='production' ? "https://svelte-express.onrender.com/api/" : "http://localhost:3000/api/"

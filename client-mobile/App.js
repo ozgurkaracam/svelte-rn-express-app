@@ -15,6 +15,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import GoSite from "./components/GoSite";
 import NetInfo from "@react-native-community/netinfo";
+import { NativeBaseProvider, Box } from "native-base";
 
 const Home = () => {
   const [results, setresults] = useState(null);
@@ -63,28 +64,31 @@ const Home = () => {
     );
 
   return (
-    <SafeAreaView
-      style={{
-        paddingVertical: Platform.OS == "android" ? 30 : 0,
-      }}
-    >
-      <SearchBar
-        getDetails={getDetails}
-        setloading={setloading}
-        searchtext={searchtext}
-        setsearchtext={setsearchtext}
-      />
-      {loading && (
-        <ActivityIndicator
-          size={"large"}
-          color="orange"
-          style={{ marginVertical: 50 }}
+    <NativeBaseProvider>
+      <SafeAreaView
+        style={{
+          paddingVertical: Platform.OS == "android" ? 30 : 0,
+        }}
+      >
+        <SearchBar
+          getDetails={getDetails}
+          setloading={setloading}
+          searchtext={searchtext}
+          setsearchtext={setsearchtext}
         />
-      )}
-      {results != null && !loading && (
-        <Results results={results} setloading={setloading} />
-      )}
-    </SafeAreaView>
+
+        {loading && (
+          <ActivityIndicator
+            size={"large"}
+            color="orange"
+            style={{ marginVertical: 50 }}
+          />
+        )}
+        {results != null && !loading && (
+          <Results results={results} setloading={setloading} />
+        )}
+      </SafeAreaView>
+    </NativeBaseProvider>
   );
 };
 

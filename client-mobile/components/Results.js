@@ -31,6 +31,7 @@ const Results = ({ results, navigation }) => {
                 link: detail.link,
               })
             }
+            key={detail.link}
           >
             <View style={styles.resultRow}>
               <View style={{ flex: 1 }}>
